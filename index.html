@@ -1,0 +1,695 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 120 120%22%3E%3Crect width=%22120%22 height=%22120%22 rx=%2224%22 fill=%22%230B1828%22/%3E%3Ccircle cx=%2260%22 cy=%2258%22 r=%2242%22 fill=%22none%22 stroke=%22%23F1EEE6%22 stroke-width=%228.5%22/%3E%3Cpath d=%22M33 62 L60 37 L87 62%22 fill=%22none%22 stroke=%22%23F1EEE6%22 stroke-width=%227%22/%3E%3Cpath d=%22M6 82 C 30 64, 52 68, 70 78 C 84 86, 98 86, 114 76 C 102 92, 84 96, 68 88 C 50 79, 30 74, 6 82 Z%22 fill=%22%23D9BD7E%22/%3E%3C/svg%3E">
+<title>Quint Home Finder &amp; Renovation</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Onafhankelijke aankoopbegeleiding, bouwkundige keuring en renovatie voor kopers van een woning in Spanje.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: navy-and-limestone luxury brochure. Full-bleed photographic hero, alternating light and ink bands, gold hairlines as the only ornament. */
+:root{
+  --ink:#13294B;          /* logo navy */
+  --ink-deep:#0B1828;
+  --gold:#B8903F;
+  --gold-soft:#D9BD7E;
+  --stone:#F6F5F1;        /* limewash white, slight warm-cool balance */
+  --paper:#FFFFFF;
+  --text:#1B2533;
+  --muted:#5D6878;
+  --line:rgba(19,41,75,.14);
+  --on-ink:#F1EEE6;
+  --on-ink-muted:#AFB8C6;
+  --band:#13294B;
+  --card:#FFFFFF;
+  --field:#FFFFFF;
+  --f-logo:"Cinzel","Trajan Pro",Georgia,serif;
+  --f-display:"Cormorant Garamond","Cormorant",Georgia,"Times New Roman",serif;
+  --f-body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --wrap:1180px;
+  --gut:max(16px,env(safe-area-inset-left,0px));
+  --gutR:max(16px,env(safe-area-inset-right,0px));
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ink:#E9E4D8;--ink-deep:#070F1B;--gold:#CDA85E;--gold-soft:#E2C88E;--stone:#0C1828;--paper:#101F33;
+  --text:#E4E7EC;--muted:#9AA6B6;--line:rgba(226,200,142,.16);--on-ink:#F1EEE6;--on-ink-muted:#AFB8C6;--band:#08121F;--card:#12233A;--field:#0E1C2F;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --ink:#E9E4D8;--ink-deep:#070F1B;--gold:#CDA85E;--gold-soft:#E2C88E;--stone:#0C1828;--paper:#101F33;
+  --text:#E4E7EC;--muted:#9AA6B6;--line:rgba(226,200,142,.16);--on-ink:#F1EEE6;--on-ink-muted:#AFB8C6;--band:#08121F;--card:#12233A;--field:#0E1C2F;color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--stone);color:var(--text);font-family:var(--f-body);font-size:16.5px;line-height:1.65;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:#0B1828}
+a{color:inherit}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:var(--gut);padding-right:var(--gutR)}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+h1,h2,h3,.price,.rangeval,.total b{font-variant-numeric:lining-nums tabular-nums}
+h1,h2,h3{font-family:var(--f-display);font-weight:500;line-height:1.08;text-wrap:balance;margin:0;color:var(--ink)}
+h2{font-size:clamp(34px,4.6vw,58px);letter-spacing:-.01em}
+h3{font-size:clamp(24px,2.4vw,30px)}
+p{margin:0}
+.lede{font-size:clamp(17px,1.5vw,19px);color:var(--muted);max-width:62ch}
+em.g{font-style:italic;color:var(--gold)}
+.ph{border-bottom:1px dashed var(--gold);color:inherit;padding-bottom:1px;white-space:nowrap}
+.ph::before{content:"✎ ";font-size:.8em;color:var(--gold)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;font:600 14px/1 var(--f-body);letter-spacing:.06em;text-decoration:none;padding:16px 24px;border-radius:2px;border:1px solid transparent;cursor:pointer;transition:background .25s,color .25s,border-color .25s,transform .25s}
+.btn:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.btn-gold{background:linear-gradient(135deg,#C8A052,#E3C887 55%,#B8903F);color:#0B1828}
+.btn-gold:hover{transform:translateY(-1px);filter:brightness(1.05)}
+.btn-line{border-color:rgba(241,238,230,.45);color:#F1EEE6;background:transparent}
+.btn-line:hover{border-color:#E3C887;color:#E3C887}
+.btn .arr{transition:transform .25s}.btn:hover .arr{transform:translateX(3px)}
+
+/* header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(11,24,40,.92);backdrop-filter:saturate(140%) blur(14px);-webkit-backdrop-filter:saturate(140%) blur(14px);border-bottom:1px solid rgba(217,189,126,.18)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:76px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#F1EEE6}
+.brand svg{width:44px;height:44px;flex:none}
+.brand b{display:block;font:600 22px/1 var(--f-logo);letter-spacing:.16em}
+.brand small{display:block;font:600 9.5px/1 var(--f-body);letter-spacing:.3em;color:#D9BD7E;margin-top:6px}
+nav.main{display:flex;gap:28px;align-items:center}
+nav.main a{font-size:13.5px;font-weight:500;letter-spacing:.04em;text-decoration:none;color:#D5DAE2;position:relative;padding:6px 0}
+nav.main a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:#D9BD7E;transition:right .3s}
+nav.main a:hover{color:#fff}nav.main a:hover::after{right:0}
+header .btn{padding:12px 18px;font-size:12.5px}
+.hd-right{display:flex;align-items:center;gap:18px}
+.lang{display:flex;border:1px solid rgba(217,189,126,.35)}
+.lang button{font:600 11.5px/1 var(--f-body);letter-spacing:.12em;color:#AFB8C6;background:transparent;border:0;padding:9px 9px;cursor:pointer}
+.lang button+button{border-left:1px solid rgba(217,189,126,.2)}
+.lang button:hover{color:#fff}
+.lang button[aria-pressed="true"]{background:#D9BD7E;color:#0B1828}
+.lang button:focus-visible{outline:2px solid #D9BD7E;outline-offset:2px}
+@media (max-width:1180px){nav.main{gap:20px}}
+@media (max-width:1080px){nav.main{display:none}}
+@media (max-width:620px){header .btn{display:none}.brand small{letter-spacing:.2em}}
+@media (max-width:400px){.brand small{display:none}.lang button{padding:9px 7px}}
+
+/* hero */
+.hero{position:relative;color:#F1EEE6;background:#0B1828;overflow:hidden;isolation:isolate}
+.hero .bg{position:absolute;inset:0;z-index:-2;background:#0B1828 url(img/hero.jpg) center 60%/cover no-repeat;animation:slowzoom 22s ease-out both}
+@keyframes slowzoom{from{transform:scale(1.08)}to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(8,18,31,.92) 0%,rgba(8,18,31,.72) 42%,rgba(8,18,31,.18) 75%,rgba(8,18,31,.05)),linear-gradient(0deg,rgba(8,18,31,.75),transparent 40%)}
+@media (max-width:760px){.hero::after{background:linear-gradient(0deg,rgba(8,18,31,.94) 35%,rgba(8,18,31,.72) 70%,rgba(8,18,31,.5))}.hero .bg{background-position:70% 60%}}
+.hero .wrap{padding-block:clamp(96px,14vw,168px) clamp(56px,7vw,88px)}
+.hero h1{color:#F6F2E8;font-size:clamp(46px,7.4vw,96px);font-weight:400;max-width:12.5ch;letter-spacing:-.015em}
+.hero h1 em{font-style:italic;color:#E3C887}
+.hero .lede{color:#D3D9E2;margin-top:26px;max-width:46ch}
+.hero .cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px}
+.hero .proof{display:flex;flex-wrap:wrap;gap:12px 34px;margin-top:clamp(56px,8vw,96px);padding-top:26px;border-top:1px solid rgba(217,189,126,.28);font-size:13.5px;color:#C9D0DA;letter-spacing:.02em}
+.hero .proof span{display:flex;align-items:center;gap:10px}
+.hero .proof span::before{content:"";width:22px;height:1px;background:#D9BD7E}
+.reveal{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.reveal.d1{animation-delay:.12s}.reveal.d2{animation-delay:.24s}.reveal.d3{animation-delay:.36s}
+@keyframes rise{from{transform:translateY(14px);opacity:.001}to{transform:none;opacity:1}}
+
+section{padding-block:clamp(72px,10vw,128px)}
+.head{display:grid;gap:18px;max-width:760px;margin-bottom:clamp(40px,5vw,64px)}
+
+/* compare */
+.compare{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);background:var(--card)}
+.compare>div{padding:clamp(24px,3.4vw,44px);min-width:0}
+.compare .them{border-right:1px solid var(--line)}
+.compare .us{background:var(--band);color:#E6E9EE;position:relative}
+.compare .us::before{content:"";position:absolute;inset:0 0 auto 0;height:2px;background:linear-gradient(90deg,#B8903F,#E3C887,#B8903F)}
+.compare h3{font-size:26px;margin-bottom:22px}
+.compare .us h3{color:#F6F2E8}
+.compare dl{margin:0;display:grid;gap:0}
+.compare dt{font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);padding-top:18px}
+.compare .us dt{color:#D9BD7E}
+.compare dd{margin:6px 0 0;padding-bottom:18px;border-bottom:1px solid var(--line);font-size:15.5px}
+.compare .us dd{border-color:rgba(217,189,126,.18)}
+.compare dd:last-of-type{border-bottom:0;padding-bottom:0}
+@media (max-width:760px){.compare{grid-template-columns:1fr}.compare .them{border-right:0;border-bottom:1px solid var(--line)}}
+
+/* steps */
+.band{background:var(--band);color:#DDE2E9}
+.band h2,.band h3{color:#F6F2E8}
+.band .lede{color:#AFB8C6}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;counter-reset:s;position:relative}
+.steps li{padding:30px 22px 0 0;position:relative;min-width:0}
+.steps li::before{counter-increment:s;content:counter(s,decimal-leading-zero);display:block;font:500 15px/1 var(--f-logo);color:#D9BD7E;letter-spacing:.1em;margin-bottom:22px}
+.steps::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,#D9BD7E,rgba(217,189,126,.2))}
+.steps li::after{content:"";position:absolute;top:-4px;left:0;width:9px;height:9px;border-radius:50%;background:#0B1828;border:1px solid #D9BD7E}
+.steps h3{font-size:25px;margin-bottom:10px}
+.steps p{font-size:14.5px;color:#AFB8C6}
+@media (max-width:980px){.steps{grid-template-columns:1fr 1fr;row-gap:36px}}
+@media (max-width:560px){.steps{grid-template-columns:1fr}}
+
+/* feature rows */
+.feature{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(32px,6vw,88px);align-items:center}
+.feature+.feature{margin-top:clamp(72px,9vw,120px)}
+.feature.flip .media{order:2}
+.media{position:relative;min-width:0}
+.media img{display:block;width:100%;height:auto;max-width:100%;aspect-ratio:4/5;object-fit:cover;background:#1d2b3f}
+.media.wide img{aspect-ratio:5/4}
+.media::after{content:"";position:absolute;inset:14px -14px -14px 14px;border:1px solid var(--gold);z-index:-1;opacity:.55}
+.feature.flip .media::after{inset:14px 14px -14px -14px}
+.media{isolation:isolate;margin:0}
+.media figcaption{position:absolute;left:0;bottom:0;background:rgba(8,18,31,.82);color:#E9E4D8;font-size:12px;letter-spacing:.06em;padding:8px 12px}
+.feature .txt{display:grid;gap:20px;min-width:0}
+@media (max-width:860px){.feature{grid-template-columns:1fr}.feature.flip .media{order:0}.media::after{display:none}}
+
+.checks{list-style:none;padding:0;margin:8px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:0 28px}
+.checks li{padding:14px 0;border-top:1px solid var(--line);font-size:15px;min-width:0}
+.checks li b{display:block;font-weight:600;color:var(--ink)}
+.checks li i{font-style:normal;font-size:12.5px;color:var(--gold);letter-spacing:.04em}
+@media (max-width:520px){.checks{grid-template-columns:1fr}}
+
+/* calculator */
+.calc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);border:1px solid var(--line);background:var(--card)}
+.calc form{padding:clamp(24px,3.4vw,44px);display:grid;gap:22px;border-right:1px solid var(--line);align-content:start}
+.field{display:grid;gap:8px}
+.field label{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.field input,.field select,.field textarea{font:500 16px var(--f-body);color:var(--text);background:var(--field);border:1px solid var(--line);border-radius:2px;padding:13px 14px;width:100%}
+.field input[type=range]{padding:0;border:0;accent-color:var(--gold);background:transparent}
+.rangeval{font:500 28px/1 var(--f-display);color:var(--ink);font-variant-numeric:tabular-nums}
+.seg{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);position:relative}
+.seg input{position:absolute;left:0;top:0;width:1px;height:1px;margin:0;opacity:0;pointer-events:none}
+.seg label{text-align:center;padding:11px 4px;font-size:12.5px;font-weight:600;letter-spacing:.02em;text-transform:none;color:var(--muted);cursor:pointer;border-right:1px solid var(--line)}
+.seg label:last-of-type{border-right:0}
+.seg input:checked+label{background:var(--band);color:#F1EEE6}
+.seg input:focus-visible+label{outline:2px solid var(--gold);outline-offset:-2px}
+.tog{display:flex;align-items:center;gap:12px;font-size:14.5px;color:var(--text);cursor:pointer}
+.tog input{width:18px;height:18px;accent-color:var(--gold)}
+.out{padding:clamp(24px,3.4vw,44px);display:grid;gap:22px;align-content:start;background:var(--band);color:#DDE2E9;min-width:0}
+.total small{display:block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#D9BD7E;font-weight:700}
+.total b{display:block;font:500 clamp(44px,5.6vw,68px)/1.05 var(--f-display);color:#F6F2E8;font-variant-numeric:tabular-nums;margin-top:8px}
+.total span{font-size:14px;color:#AFB8C6}
+.bar{display:flex;height:10px;width:100%;overflow:hidden;background:rgba(255,255,255,.06)}
+.bar i{display:block;height:100%;transition:width .45s cubic-bezier(.2,.7,.2,1)}
+.rows{display:grid;gap:0;font-variant-numeric:tabular-nums}
+.rows div{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid rgba(217,189,126,.14);font-size:14.5px}
+.rows div span:first-child{display:flex;align-items:center;gap:10px;color:#C9D0DA;min-width:0}
+.rows div span:last-child{color:#F1EEE6;white-space:nowrap}
+.rows i{width:9px;height:9px;flex:none;display:inline-block}
+.calc .note{font-size:12.5px;color:#8E9AAB}
+@media (max-width:860px){.calc{grid-template-columns:1fr}.calc form{border-right:0;border-bottom:1px solid var(--line)}}
+
+/* seen on idealista */
+.seen{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(32px,6vw,88px);align-items:start}
+.seen .txt{display:grid;gap:20px;min-width:0}
+.seen-form{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.seen-form input{flex:1 1 260px;min-width:0;font:500 16px var(--f-body);color:var(--text);background:var(--field);border:1px solid var(--line);border-radius:2px;padding:14px 16px}
+.seen-form input:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.portals{display:grid;gap:0;border-top:1px solid var(--line);min-width:0}
+.portals .eyebrow{padding:16px 0 6px}
+.portals a{display:grid;grid-template-columns:1fr auto auto;align-items:baseline;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink)}
+.portals a b{font:500 24px/1.1 var(--f-display)}
+.portals a span{font-size:13px;color:var(--muted)}
+.portals a i{font-style:normal;color:var(--gold);transition:transform .25s}
+.portals a:hover i{transform:translate(2px,-2px)}
+.portals a:hover b{color:var(--gold)}
+#gezien .sent{background:var(--paper)}
+@media (max-width:860px){.seen{grid-template-columns:1fr}}
+
+/* pricing */
+.prices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid var(--line);background:var(--card)}
+.plan{padding:clamp(26px,3vw,40px);display:flex;flex-direction:column;gap:18px;border-right:1px solid var(--line);min-width:0}
+.plan:last-child{border-right:0}
+.plan.hl{background:var(--band);color:#DDE2E9;position:relative;margin:-14px 0;padding-block:calc(clamp(26px,3vw,40px) + 14px);box-shadow:0 24px 60px -24px rgba(8,18,31,.55)}
+.plan.hl h3,.plan.hl .price{color:#F6F2E8}
+.plan .tag{align-self:flex-start;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#0B1828;background:linear-gradient(135deg,#C8A052,#E3C887);padding:6px 10px}
+.plan .kicker{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.plan.hl .kicker{color:#D9BD7E}
+.price{font:500 46px/1 var(--f-display);color:var(--ink);font-variant-numeric:tabular-nums}
+.price small{font:500 14px var(--f-body);color:var(--muted);margin-left:6px}
+.plan.hl .price small{color:#AFB8C6}
+.plan ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:14.5px;flex:1;align-content:start}
+.plan li{display:flex;gap:12px}
+.plan li::before{content:"";flex:none;width:14px;height:1px;background:var(--gold);margin-top:12px}
+.plan .btn{justify-content:center}
+.plan .btn-ink{background:transparent;border-color:var(--line);color:var(--ink)}
+.plan .btn-ink:hover{border-color:var(--gold);color:var(--gold)}
+.fine{margin-top:22px;font-size:13px;color:var(--muted)}
+@media (max-width:900px){.prices{grid-template-columns:1fr}.plan{border-right:0;border-bottom:1px solid var(--line)}.plan.hl{margin:0}}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,88px);align-items:start}
+.about blockquote{margin:0;font:italic 400 clamp(28px,3.2vw,40px)/1.2 var(--f-display);color:var(--ink);text-wrap:balance}
+.about blockquote::before{content:"";display:block;width:56px;height:1px;background:var(--gold);margin-bottom:26px}
+.about .txt{display:grid;gap:18px;color:var(--muted)}
+@media (max-width:860px){.about{grid-template-columns:1fr}}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));grid-auto-rows:clamp(150px,17vw,230px);gap:12px}
+.gallery figure{margin:0;position:relative;overflow:hidden;min-width:0;background:#1d2b3f}
+.gallery img{width:100%;height:100%;max-width:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.gallery figure:hover img{transform:scale(1.04)}
+.gallery figcaption{position:absolute;left:0;bottom:0;background:rgba(8,18,31,.82);color:#E9E4D8;font-size:12px;letter-spacing:.06em;padding:7px 11px}
+.g-a{grid-column:span 4;grid-row:span 2}.g-b{grid-column:span 2}.g-c{grid-column:span 2}.g-d{grid-column:span 3}.g-e{grid-column:span 3}
+@media (max-width:700px){.gallery{grid-template-columns:1fr 1fr;grid-auto-rows:150px}.g-a{grid-column:span 2;grid-row:span 2}.g-b,.g-c{grid-column:span 1}.g-d,.g-e{grid-column:span 2}}
+.fine a{color:var(--gold);text-decoration:none;font-weight:600}
+
+/* faq */
+.faq{display:grid;gap:0;border-top:1px solid var(--line);max-width:880px}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;align-items:center;padding:24px 0;font:500 clamp(21px,2vw,25px)/1.25 var(--f-display);color:var(--ink)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font:300 28px/1 var(--f-body);color:var(--gold);transition:transform .3s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 0 24px;color:var(--muted);max-width:68ch}
+
+/* contact */
+.contact{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(32px,6vw,88px)}
+.contact .info{display:grid;gap:26px;align-content:start}
+.contact .info dl{margin:0;display:grid;gap:18px}
+.contact dt{font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#D9BD7E}
+.contact dd{margin:4px 0 0;font-size:17px;color:#F1EEE6}
+.contact form{display:grid;grid-template-columns:1fr 1fr;gap:18px;background:var(--card);padding:clamp(24px,3vw,40px);color:var(--text)}
+.contact form .full{grid-column:1/-1}
+.contact form textarea{min-height:120px;resize:vertical}
+.sent{grid-column:1/-1;font-size:14px;color:var(--muted);border-left:2px solid var(--gold);padding:10px 14px;background:var(--stone)}
+@media (max-width:860px){.contact{grid-template-columns:1fr}}
+@media (max-width:520px){.contact form{grid-template-columns:1fr}}
+
+footer{background:#08121F;color:#8E9AAB;font-size:13px}
+footer .wrap{padding-block:48px calc(36px + env(safe-area-inset-bottom,0px));display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:center}
+footer .legal{display:flex;flex-wrap:wrap;gap:8px 22px}
+</style>
+
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="qg" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#9C7330"/><stop offset=".5" stop-color="#E2C27A"/><stop offset="1" stop-color="#B08A43"/></linearGradient>
+    <symbol id="qmark" viewBox="0 0 120 120">
+      <circle cx="60" cy="58" r="42" fill="none" stroke="currentColor" stroke-width="8.5"/>
+      <path d="M33 62 L60 37 L87 62" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="square"/>
+      <path d="M75 92 C 84 100, 95 106, 112 108 C 98 110, 84 108, 70 100 Z" fill="currentColor"/>
+      <path d="M6 82 C 30 64, 52 68, 70 78 C 84 86, 98 86, 114 76 C 102 92, 84 96, 68 88 C 50 79, 30 74, 6 82 Z" fill="url(#qg)"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand notr-c" href="#top" aria-label="Quint Home Finder &amp; Renovation, naar boven">
+      <svg style="color:#F1EEE6"><use href="#qmark"/></svg>
+      <span><b>QUINT</b><small>HOME FINDER &amp; RENOVATION</small></span>
+    </a>
+    <nav class="main" aria-label="Hoofdmenu">
+      <a href="#werkwijze">Werkwijze</a>
+      <a href="#keuring">Keuring</a>
+      <a href="#kosten">Kosten berekenen</a>
+      <a href="#tarieven">Tarieven</a>
+      <a href="#werk">Eigen werk</a>
+      <a href="#vragen">Vragen</a>
+    </nav>
+    <div class="hd-right">
+      <div class="lang notr-c" role="group" aria-label="Taal / Language">
+        <button type="button" data-l="nl" aria-pressed="true">NL</button><button type="button" data-l="en" aria-pressed="false">EN</button><button type="button" data-l="es" aria-pressed="false">ES</button><button type="button" data-l="de" aria-pressed="false">DE</button>
+      </div>
+      <a class="btn btn-gold" href="#contact">Kennismaken <span class="arr">→</span></a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-label="Introductie" style="padding:0">
+    <div class="bg" role="img" aria-label="Witte mediterrane villa met olijfbomen en zwembad bij avondzon"></div>
+    <div class="wrap">
+      <p class="eyebrow reveal" style="color:#D9BD7E">Aankoopbegeleiding &amp; renovatie in Spanje</p>
+      <h1 class="reveal d1" style="margin-top:22px">Een huis in Spanje, <em>zonder verrassingen achteraf.</em></h1>
+      <p class="lede reveal d2">Wij zoeken met u, keuren de woning vóór u tekent en rekenen uit wat hij echt kost, renovatie inbegrepen. We werken alleen voor de koper. Nooit voor de verkoper.</p>
+      <div class="cta reveal d3">
+        <a class="btn btn-gold" href="#contact">Plan een kennismaking <span class="arr">→</span></a>
+        <a class="btn btn-line" href="#kosten">Bereken uw totale kosten</a>
+      </div>
+      <div class="proof">
+        <span>Geen provisie van verkopers</span>
+        <span>Bouwkundige keuring vóór uw bod</span>
+        <span>Eén totale begroting</span>
+        <span>25 jaar bouwervaring</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="waarom">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Waarom Quint</p>
+        <h2>De makelaar verkoopt. <em class="g">Wij kijken voor u.</em></h2>
+        <p class="lede">In Spanje werkt de makelaar meestal voor de verkoper en verdient hij aan de verkoopprijs. Gebreken en bijkomende kosten zijn niet zijn zorg. Daar staat u als koper alleen voor, vaak in een taal en een systeem dat u niet kent.</p>
+      </div>
+      <div class="compare">
+        <div class="them">
+          <h3>Makelaar van de verkoper</h3>
+          <dl>
+            <dt>Wordt betaald door</dt><dd>De verkoper, met een percentage van de verkoopprijs</dd>
+            <dt>Belang</dt><dd>Snel verkopen, tegen een zo hoog mogelijke prijs</dd>
+            <dt>Gebreken</dt><dd>Niet zijn taak om ze te zoeken of te melden</dd>
+            <dt>Kosten na aankoop</dt><dd>Komt u pas achter als u er woont</dd>
+            <dt>Na de sleuteloverdracht</dt><dd>Klaar</dd>
+          </dl>
+        </div>
+        <div class="us">
+          <h3>Quint, uw aankoopbegeleider</h3>
+          <dl>
+            <dt>Wordt betaald door</dt><dd>U, met een vast en vooraf bekend tarief</dd>
+            <dt>Belang</dt><dd>Dat u de juiste woning koopt, voor de juiste prijs</dd>
+            <dt>Gebreken</dt><dd>Bouwkundige keuring en rapport vóór u een bod doet</dd>
+            <dt>Kosten na aankoop</dt><dd>Totale begroting: aankoop, belastingen en renovatie</dd>
+            <dt>Na de sleuteloverdracht</dt><dd>Renovatie of verbouwing, als u dat wilt</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="werkwijze">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Werkwijze</p>
+        <h2>Van zoekopdracht tot sleutel, en daarna.</h2>
+        <p class="lede">U kiest zelf hoeveel u uit handen geeft. Een losse keuring kan ook.</p>
+      </div>
+      <ol class="steps">
+        <li><h3>Zoeken</h3><p>We stellen samen uw zoekprofiel op: regio, budget, wensen. Daarna selecteren we woningen die echt passen.</p></li>
+        <li><h3>Keuren</h3><p>We gaan mee naar de bezichtiging en keuren de woning bouwkundig. U krijgt een rapport met foto's.</p></li>
+        <li><h3>Begroten</h3><p>Renovatieadvies met een kostenraming, plus alle aankoopkosten. Eén totaalbedrag.</p></li>
+        <li><h3>Kopen</h3><p>We begeleiden het bod en de stappen tot de notaris, samen met uw eigen advocaat.</p></li>
+        <li><h3>Renoveren</h3><p>Na de aankoop voeren we de renovatie of verbouwing voor u uit of regelen we die.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="keuring">
+    <div class="wrap">
+      <div class="feature">
+        <figure class="media"><img src="img/w-boerderij.jpg" alt="Renovatie van een woonboerderij: oude balken en metselwerk blootgelegd" loading="lazy" width="1600" height="900"><figcaption>Eigen werk · renovatie woonboerderij, Didam</figcaption></figure>
+        <div class="txt">
+          <p class="eyebrow">Bouwkundige keuring</p>
+          <h2>Wat u bij de bezichtiging <em class="g">niet</em> ziet.</h2>
+          <p class="lede">Een verse laag witkalk verbergt veel. Wij kijken waar het geld zit: in de constructie, het dak, het water en de papieren.</p>
+          <ul class="checks">
+            <li><b>Vocht en salpeter</b><i>humedad · salitre</i></li>
+            <li><b>Scheuren en verzakking</b><i>grietas · asentamientos</i></li>
+            <li><b>Dak en dakterras</b><i>cubierta · impermeabilización</i></li>
+            <li><b>Asbest-golfplaten</b><i>uralita</i></li>
+            <li><b>Elektra en keuringsbewijs</b><i>boletín eléctrico</i></li>
+            <li><b>Riolering en beerput</b><i>saneamiento · fosa séptica</i></li>
+            <li><b>Aanbouw die niet geregistreerd is</b><i>Catastro · Registro de la Propiedad</i></li>
+            <li><b>Bewoonbaarheid</b><i>cédula de habitabilidad</i></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="feature flip">
+        <figure class="media wide"><img src="img/w-aanbouw.jpg" alt="Aanbouw met grote glazen pui en balkon" loading="lazy" width="1600" height="1200"><figcaption>Eigen werk · aanbouw met balkon, Elst</figcaption></figure>
+        <div class="txt">
+          <p class="eyebrow">Renovatie en verbouwing</p>
+          <h2>Wie de begroting maakt, <em class="g">bouwt hem ook.</em></h2>
+          <p class="lede">Omdat wij de woning al vóór de aankoop hebben gekeurd, weten we precies wat er moet gebeuren. U krijgt één aanspreekpunt, vaste afspraken over planning en budget, en wekelijks foto's van de voortgang als u in Nederland of België bent.</p>
+          <p><a class="btn btn-gold" href="#contact" style="margin-top:6px">Vraag een renovatieadvies aan <span class="arr">→</span></a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kosten" style="background:var(--paper)">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Kosten berekenen</p>
+        <h2>Wat kost uw woning <em class="g">echt?</em></h2>
+        <p class="lede">De vraagprijs is maar een deel. Bereken hier een eerste indicatie van het totaal, met belastingen, notaris en renovatie.</p>
+      </div>
+      <div class="calc">
+        <form id="calc" aria-label="Kostencalculator" onsubmit="return false">
+          <div class="field">
+            <label for="c-price">Koopprijs</label>
+            <div class="rangeval notr" id="c-price-out">€ 350.000</div>
+            <input type="range" id="c-price" min="75000" max="1500000" step="5000" value="350000" aria-describedby="c-price-out">
+          </div>
+          <div class="field">
+            <label for="c-region">Regio (overdrachtsbelasting ITP)</label>
+            <select id="c-region">
+              <option value="0.07">Andalusië: Costa del Sol, Costa Tropical (7%)</option>
+              <option value="0.10" selected>Valencia: Costa Blanca, Costa del Azahar (10%)</option>
+              <option value="0.08">Murcia: Costa Cálida (8%)</option>
+              <option value="0.10">Catalonië: Costa Brava, Costa Dorada (10%)</option>
+              <option value="0.08">Balearen (vanaf 8%)</option>
+              <option value="0.065">Canarische Eilanden (6,5%)</option>
+              <option value="0.06">Madrid (6%)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="c-m2">Woonoppervlak</label>
+            <div class="rangeval notr" id="c-m2-out">140 m²</div>
+            <input type="range" id="c-m2" min="40" max="500" step="5" value="140" aria-describedby="c-m2-out">
+          </div>
+          <fieldset class="field" style="border:0;padding:0;margin:0">
+            <legend style="font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:8px">Renovatie</legend>
+            <div class="seg">
+              <input type="radio" name="reno" id="r0" value="0"><label for="r0">Geen</label>
+              <input type="radio" name="reno" id="r1" value="250"><label for="r1">Opfrissen</label>
+              <input type="radio" name="reno" id="r2" value="650" checked><label for="r2">Gedeeltelijk</label>
+              <input type="radio" name="reno" id="r3" value="1100"><label for="r3">Volledig</label>
+            </div>
+          </fieldset>
+          <label class="tog"><input type="checkbox" id="c-law" checked> <span>Eigen onafhankelijke advocaat (aanbevolen)</span></label>
+          <label class="tog"><input type="checkbox" id="c-quint" checked> <span>Complete begeleiding door Quint</span></label>
+        </form>
+        <div class="out" aria-live="polite">
+          <div class="total"><small>Totale investering, indicatie</small><b id="o-total" class="notr">€ 0</b><span id="o-extra" class="notr">waarvan € 0 bovenop de koopprijs</span></div>
+          <div class="bar" id="o-bar"></div>
+          <div class="rows" id="o-rows"></div>
+          <p class="note">Indicatie op basis van gangbare tarieven voor bestaande woningen. Tarieven verschillen per regio en situatie. Bij nieuwbouw geldt btw (IVA) in plaats van ITP. Voor uw woning rekenen we alles exact uit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gezien">
+    <div class="wrap seen">
+      <div class="txt">
+        <p class="eyebrow">Al iets gezien?</p>
+        <h2>Gevonden op idealista? <em class="g">Wij gaan kijken.</em></h2>
+        <p class="lede">Plak de link van de advertentie. We bekijken de woning, vragen de papieren op en vertellen u eerlijk wat we zien, voordat u een bod doet.</p>
+        <form id="seen" class="seen-form" novalidate>
+          <label for="s-url" class="vh">Link naar de advertentie</label>
+          <input id="s-url" type="url" inputmode="url" placeholder="https://www.idealista.com/inmueble/…">
+          <button class="btn btn-gold" type="submit">Laat deze woning checken <span class="arr">→</span></button>
+        </form>
+        <p class="sent" id="seen-sent" hidden>Dit is de voorbeeldversie van de site. Op de echte site komt de link direct bij ons binnen.</p>
+      </div>
+      <div class="portals">
+        <p class="eyebrow">Actueel aanbod bekijken</p>
+        <a href="https://www.idealista.com/venta-viviendas/alicante-provincia/" target="_blank" rel="noopener"><b>Costa Blanca</b><span>Alicante</span><i>↗</i></a>
+        <a href="https://www.idealista.com/venta-viviendas/malaga-provincia/" target="_blank" rel="noopener"><b>Costa del Sol</b><span>Málaga</span><i>↗</i></a>
+        <a href="https://www.idealista.com/venta-viviendas/murcia-provincia/" target="_blank" rel="noopener"><b>Costa Cálida</b><span>Murcia</span><i>↗</i></a>
+        <a href="https://www.idealista.com/venta-viviendas/girona-provincia/" target="_blank" rel="noopener"><b>Costa Brava</b><span>Girona</span><i>↗</i></a>
+        <p class="fine" style="margin:6px 0 0">Opent idealista.com in een nieuw venster.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="tarieven">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Tarieven</p>
+        <h2>Vooraf duidelijk. <em class="g">Geen provisie.</em></h2>
+        <p class="lede">U betaalt ons, niet de verkoper. Daarom kunnen we u ook afraden om te kopen.</p>
+      </div>
+      <div class="prices">
+        <article class="plan">
+          <p class="kicker">Losse keuring</p>
+          <h3>Bouwkundige keuring</h3>
+          <div class="price">€ 595<small>per woning</small></div>
+          <ul>
+            <li>Keuring ter plaatse, ook als u zelf niet in Spanje bent</li>
+            <li>Rapport met foto's en gebreken op volgorde van urgentie</li>
+            <li>Ruwe kostenraming per gebrek</li>
+            <li>Telefonische toelichting</li>
+          </ul>
+          <a class="btn btn-ink" href="#contact">Keuring aanvragen</a>
+        </article>
+        <article class="plan hl">
+          <span class="tag">Meest gekozen</span>
+          <p class="kicker">Complete begeleiding</p>
+          <h3>Zoeken tot sleutel</h3>
+          <div class="price">1,5%<small>van de koopprijs, min. € 3.950</small></div>
+          <ul>
+            <li>Zoekprofiel en selectie van woningen</li>
+            <li>Mee naar alle bezichtigingen</li>
+            <li>Keuring van maximaal 3 woningen inbegrepen</li>
+            <li>Renovatieadvies met totale begroting</li>
+            <li>Advies bij het bod en begeleiding tot de notaris</li>
+          </ul>
+          <a class="btn btn-gold" href="#contact">Kennismaken <span class="arr">→</span></a>
+        </article>
+        <article class="plan">
+          <p class="kicker">Na de aankoop</p>
+          <h3>Renovatie &amp; verbouwing</h3>
+          <div class="price">Op maat<small>vaste offerte</small></div>
+          <ul>
+            <li>Ontwerp en materiaalkeuze</li>
+            <li>Vergunningen en aannemers</li>
+            <li>Toezicht op de bouw en wekelijkse updates</li>
+            <li>Oplevering met eindcontrole</li>
+          </ul>
+          <a class="btn btn-ink" href="#contact">Offerte aanvragen</a>
+        </article>
+      </div>
+      <p class="fine">Tarieven inclusief 21% IVA. Reiskosten binnen het werkgebied inbegrepen. Bij complete begeleiding verrekenen we eerdere keuringen.</p>
+    </div>
+  </section>
+
+  <section class="band" id="over">
+    <div class="wrap about">
+      <blockquote style="color:#F6F2E8">“Ik heb te vaak gezien hoe kopers pas na de sleutel ontdekten wat ze hadden gekocht.”</blockquote>
+      <div class="txt" style="color:#AFB8C6">
+        <p class="eyebrow">Over Quint</p>
+        <p>Achter Quint staat <span class="ph">naam</span>. Ruim 25 jaar bouwde en renoveerde hij woningen in Nederland met zijn eigen bouwbedrijf, RKOB Bouwbedrijf: van woonboerderijen en jaren-30-woningen tot complete nieuwbouw. Nu woont en werkt hij in <span class="ph">regio</span>.</p>
+        <p>Quint is ontstaan uit een eenvoudig idee: wie in Spanje een huis koopt, verdient iemand die aan zijn kant staat. Iemand die weet hoe een dak hoort te liggen, wat een scheur betekent en wat een renovatie hier kost.</p>
+        <p style="color:#F1EEE6">Wij weten hoe een huis in elkaar zit en hebben geen belang bij de verkoop.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="werk">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Eigen werk</p>
+        <h2>25 jaar bouwen en renoveren. <em class="g">Nu in Spanje.</em></h2>
+        <p class="lede">Wie zelf honderden keren een dak, een fundering en een badkamer heeft vernieuwd, ziet bij een bezichtiging direct wat er mis is. Een selectie uit ons werk in Nederland.</p>
+      </div>
+      <div class="gallery">
+        <figure class="g-a"><img src="img/w-nieuwbouw.jpg" alt="Nieuwbouwwoning met verlichte gevel in de avond" loading="lazy" width="1600" height="1200"><figcaption>Nieuwbouw · Angerlo</figcaption></figure>
+        <figure class="g-b"><img src="img/w-friesland.jpg" alt="Gerenoveerde woonboerderij met tuin" loading="lazy" width="1600" height="1200"><figcaption>Renovatie woonboerderij · Friesland</figcaption></figure>
+        <figure class="g-c"><img src="img/w-woning.jpg" alt="Vrijstaande woning met erker en terras" loading="lazy" width="1600" height="1200"><figcaption>Woning · eigen werk</figcaption></figure>
+        <figure class="g-d"><img src="img/w-zolder.jpg" alt="Jaren-30-woning in de steigers tijdens renovatie" loading="lazy" width="1600" height="900"><figcaption>Renovatie jaren-30-woning</figcaption></figure>
+        <figure class="g-e"><img src="img/w-villa.jpg" alt="Nieuwbouwvilla met hekwerk en bomen" loading="lazy" width="1600" height="1067"><figcaption>Nieuwbouw · Angerlo</figcaption></figure>
+      </div>
+      <p class="fine"><a href="https://rkobbouwbedrijf.nl/projecten/" target="_blank" rel="noopener">Bekijk alle projecten op rkobbouwbedrijf.nl →</a></p>
+    </div>
+  </section>
+
+  <section id="vragen">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Veelgestelde vragen</p>
+        <h2>Goed om te weten.</h2>
+      </div>
+      <div class="faq">
+        <details><summary>Wat als ik de woning na de keuring niet koop?</summary><p>Dan heeft de keuring zijn werk gedaan. U betaalt alleen de keuring. Bij complete begeleiding zoeken we gewoon verder, de keuring van maximaal drie woningen is inbegrepen.</p></details>
+        <details><summary>Werken jullie samen met makelaars?</summary><p>Ja, want de meeste woningen staan bij een makelaar te koop. We bezichtigen via hen, maar we ontvangen geen provisie en hebben geen afspraken met verkopers. Ons enige belang is uw belang.</p></details>
+        <details><summary>Zijn jullie ook advocaat?</summary><p>Nee. Voor de juridische controle, zoals de eigendomsakte (nota simple), schulden op de woning en het koopcontract, raden we altijd een eigen onafhankelijke advocaat aan. We werken daar nauw mee samen en kunnen u er een aanbevelen.</p></details>
+        <details><summary>Ik woon nog in Nederland of België. Kan het op afstand?</summary><p>Ja. We bezichtigen en keuren ter plaatse, sturen foto's en video en bespreken alles met u via videobellen. U komt pas naar Spanje als er een woning is die het waard is.</p></details>
+        <details><summary>In welke regio's zijn jullie actief?</summary><p>We werken vanuit <span class="ph">regio</span>. Voor andere regio's overleggen we graag wat mogelijk is.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="contact">
+    <div class="wrap contact">
+      <div class="info">
+        <p class="eyebrow">Contact</p>
+        <h2>Vertel ons wat u zoekt.</h2>
+        <p class="lede">Een kennismaking is vrijblijvend en kost niets. Binnen één werkdag hoort u van ons.</p>
+        <dl>
+          <div><dt>Telefoon en WhatsApp</dt><dd>+31 6 21 82 68 15</dd></div>
+          <div><dt>E-mail</dt><dd><span class="ph">info@domeinnaam</span></dd></div>
+          <div><dt>Werkgebied</dt><dd><span class="ph">regio</span>, Spanje</dd></div>
+        </dl>
+      </div>
+      <form id="lead" novalidate>
+        <div class="field"><label for="f-name">Naam</label><input id="f-name" autocomplete="name" required></div>
+        <div class="field"><label for="f-phone">Telefoon</label><input id="f-phone" type="tel" autocomplete="tel"></div>
+        <div class="field full"><label for="f-mail">E-mail</label><input id="f-mail" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="f-budget">Budget</label>
+          <select id="f-budget"><option>Tot € 200.000</option><option selected>€ 200.000 – 400.000</option><option>€ 400.000 – 750.000</option><option>Boven € 750.000</option></select></div>
+        <div class="field"><label for="f-help">Waarmee kunnen we helpen?</label>
+          <select id="f-help"><option>Complete begeleiding</option><option>Alleen een keuring</option><option>Renovatie of verbouwing</option><option>Weet ik nog niet</option></select></div>
+        <div class="field full"><label for="f-msg">Bericht</label><textarea id="f-msg" placeholder="Regio, type woning, wanneer u wilt kopen…"></textarea></div>
+        <div class="full"><button class="btn btn-gold" type="submit">Verstuur aanvraag <span class="arr">→</span></button></div>
+        <p class="sent" id="sent" hidden>Dit is de voorbeeldversie van de site. Op de echte site komt uw aanvraag direct binnen per e-mail en WhatsApp.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand notr-c" href="#top" aria-label="Naar boven"><svg style="color:#F1EEE6"><use href="#qmark"/></svg><span><b>QUINT</b><small>HOME FINDER &amp; RENOVATION · SPAIN</small></span></a>
+    <div class="legal"><span>© 2026 Quint Home Finder &amp; Renovation</span><span>NIF <span class="ph">nummer</span></span><span>Aviso legal</span><span>Privacidad</span><span>Cookies</span></div>
+  </div>
+</footer>
+
+<script>
+(()=>{
+  const $=id=>document.getElementById(id);
+  const TR={"Werkwijze": {"en": "How it works", "es": "Cómo trabajamos", "de": "Ablauf"}, "Keuring": {"en": "Inspection", "es": "Inspección", "de": "Gutachten"}, "Kosten berekenen": {"en": "Cost calculator", "es": "Calcular costes", "de": "Kostenrechner"}, "Tarieven": {"en": "Fees", "es": "Tarifas", "de": "Preise"}, "Eigen werk": {"en": "Our work", "es": "Nuestro trabajo", "de": "Referenzen"}, "Vragen": {"en": "FAQ", "es": "Preguntas", "de": "Fragen"}, "Kennismaken <span class=\"arr\">→<\/span>": {"en": "Get in touch <span class=\"arr\">→<\/span>", "es": "Contacto <span class=\"arr\">→<\/span>", "de": "Kontakt <span class=\"arr\">→<\/span>"}, "Aankoopbegeleiding &amp; renovatie in Spanje": {"en": "Buyer's agent &amp; renovation in Spain", "es": "Asesoría de compra y reformas en España", "de": "Kaufbegleitung &amp; Renovierung in Spanien"}, "Een huis in Spanje, <em>zonder verrassingen achteraf.<\/em>": {"en": "A home in Spain, <em>without surprises later.<\/em>", "es": "Una casa en España, <em>sin sorpresas después.<\/em>", "de": "Ein Haus in Spanien, <em>ohne böse Überraschungen.<\/em>"}, "Wij zoeken met u, keuren de woning vóór u tekent en rekenen uit wat hij echt kost, renovatie inbegrepen. We werken alleen voor de koper. Nooit voor de verkoper.": {"en": "We search with you, inspect the property before you sign and work out what it really costs, renovation included. We work only for the buyer. Never for the seller.", "es": "Buscamos con usted, inspeccionamos la vivienda antes de que firme y calculamos lo que cuesta de verdad, reforma incluida. Trabajamos solo para el comprador. Nunca para el vendedor.", "de": "Wir suchen mit Ihnen, prüfen die Immobilie, bevor Sie unterschreiben, und berechnen, was sie wirklich kostet, inklusive Renovierung. Wir arbeiten nur für den Käufer. Nie für den Verkäufer."}, "Plan een kennismaking <span class=\"arr\">→<\/span>": {"en": "Book an introduction <span class=\"arr\">→<\/span>", "es": "Pida una cita <span class=\"arr\">→<\/span>", "de": "Kennenlerngespräch vereinbaren <span class=\"arr\">→<\/span>"}, "Bereken uw totale kosten": {"en": "Calculate your total costs", "es": "Calcule sus costes totales", "de": "Gesamtkosten berechnen"}, "Geen provisie van verkopers": {"en": "No commission from sellers", "es": "Sin comisión de vendedores", "de": "Keine Provision von Verkäufern"}, "Bouwkundige keuring vóór uw bod": {"en": "Building survey before you make an offer", "es": "Inspección técnica antes de su oferta", "de": "Bautechnisches Gutachten vor Ihrem Angebot"}, "Eén totale begroting": {"en": "One total budget", "es": "Un presupuesto total", "de": "Ein Gesamtbudget"}, "25 jaar bouwervaring": {"en": "25 years of building experience", "es": "25 años de experiencia en construcción", "de": "25 Jahre Bauerfahrung"}, "Waarom Quint": {"en": "Why Quint", "es": "Por qué Quint", "de": "Warum Quint"}, "De makelaar verkoopt. <em class=\"g\">Wij kijken voor u.<\/em>": {"en": "The agent sells. <em class=\"g\">We look out for you.<\/em>", "es": "La inmobiliaria vende. <em class=\"g\">Nosotros miramos por usted.<\/em>", "de": "Der Makler verkauft. <em class=\"g\">Wir schauen für Sie hin.<\/em>"}, "In Spanje werkt de makelaar meestal voor de verkoper en verdient hij aan de verkoopprijs. Gebreken en bijkomende kosten zijn niet zijn zorg. Daar staat u als koper alleen voor, vaak in een taal en een systeem dat u niet kent.": {"en": "In Spain, the estate agent usually works for the seller and earns a share of the sale price. Defects and extra costs are not their concern. As a buyer you face them alone, often in a language and a system you don't know.", "es": "En España, la inmobiliaria suele trabajar para el vendedor y cobra un porcentaje del precio de venta. Los defectos y los gastos adicionales no son asunto suyo. Como comprador, usted los afronta solo.", "de": "In Spanien arbeitet der Makler meist für den Verkäufer und verdient am Verkaufspreis. Mängel und Nebenkosten sind nicht seine Sorge. Damit stehen Sie als Käufer allein da, oft in einer fremden Sprache und einem fremden System."}, "Makelaar van de verkoper": {"en": "The seller's agent", "es": "Inmobiliaria del vendedor", "de": "Makler des Verkäufers"}, "Wordt betaald door": {"en": "Paid by", "es": "Quién paga", "de": "Bezahlt von"}, "De verkoper, met een percentage van de verkoopprijs": {"en": "The seller, as a percentage of the sale price", "es": "El vendedor, con un porcentaje del precio de venta", "de": "Dem Verkäufer, mit einem Prozentsatz des Verkaufspreises"}, "Belang": {"en": "Interest", "es": "Interés", "de": "Interesse"}, "Snel verkopen, tegen een zo hoog mogelijke prijs": {"en": "Selling fast, at the highest possible price", "es": "Vender rápido, al precio más alto posible", "de": "Schnell verkaufen, zum höchstmöglichen Preis"}, "Gebreken": {"en": "Defects", "es": "Defectos", "de": "Mängel"}, "Niet zijn taak om ze te zoeken of te melden": {"en": "Not their job to find or report them", "es": "No es su tarea buscarlos ni comunicarlos", "de": "Nicht seine Aufgabe, sie zu suchen oder zu melden"}, "Kosten na aankoop": {"en": "Costs after purchase", "es": "Gastos tras la compra", "de": "Kosten nach dem Kauf"}, "Komt u pas achter als u er woont": {"en": "You find out once you live there", "es": "Los descubre cuando ya vive allí", "de": "Erfahren Sie erst, wenn Sie dort wohnen"}, "Na de sleuteloverdracht": {"en": "After handover", "es": "Tras la entrega de llaves", "de": "Nach der Schlüsselübergabe"}, "Klaar": {"en": "Done", "es": "Fin", "de": "Erledigt"}, "Quint, uw aankoopbegeleider": {"en": "Quint, your buyer's agent", "es": "Quint, su asesor de compra", "de": "Quint, Ihr Kaufbegleiter"}, "U, met een vast en vooraf bekend tarief": {"en": "You, at a fixed fee agreed in advance", "es": "Usted, con una tarifa fija y conocida de antemano", "de": "Ihnen, zu einem festen, vorab bekannten Preis"}, "Dat u de juiste woning koopt, voor de juiste prijs": {"en": "That you buy the right home, at the right price", "es": "Que compre la vivienda adecuada, al precio adecuado", "de": "Dass Sie das richtige Haus zum richtigen Preis kaufen"}, "Bouwkundige keuring en rapport vóór u een bod doet": {"en": "Building survey and report before you make an offer", "es": "Inspección técnica e informe antes de hacer una oferta", "de": "Gutachten mit Bericht, bevor Sie ein Angebot machen"}, "Totale begroting: aankoop, belastingen en renovatie": {"en": "Total budget: purchase, taxes and renovation", "es": "Presupuesto total: compra, impuestos y reforma", "de": "Gesamtbudget: Kauf, Steuern und Renovierung"}, "Renovatie of verbouwing, als u dat wilt": {"en": "Renovation or remodelling, if you want", "es": "Reforma o ampliación, si lo desea", "de": "Renovierung oder Umbau, wenn Sie möchten"}, "Van zoekopdracht tot sleutel, en daarna.": {"en": "From search to keys, and beyond.", "es": "De la búsqueda a las llaves, y después.", "de": "Von der Suche bis zum Schlüssel, und danach."}, "U kiest zelf hoeveel u uit handen geeft. Een losse keuring kan ook.": {"en": "You choose how much you hand over. A single inspection is possible too.", "es": "Usted decide cuánto delega. También es posible solo una inspección.", "de": "Sie entscheiden, wie viel Sie abgeben. Auch ein einzelnes Gutachten ist möglich."}, "Zoeken": {"en": "Search", "es": "Buscar", "de": "Suchen"}, "We stellen samen uw zoekprofiel op: regio, budget, wensen. Daarna selecteren we woningen die echt passen.": {"en": "Together we draw up your search profile: area, budget, wishes. Then we select homes that truly fit.", "es": "Definimos juntos su perfil: zona, presupuesto, deseos. Después seleccionamos viviendas que encajan de verdad.", "de": "Gemeinsam erstellen wir Ihr Suchprofil: Region, Budget, Wünsche. Dann wählen wir Häuser aus, die wirklich passen."}, "Keuren": {"en": "Inspect", "es": "Inspeccionar", "de": "Prüfen"}, "We gaan mee naar de bezichtiging en keuren de woning bouwkundig. U krijgt een rapport met foto's.": {"en": "We join the viewing and carry out a building survey. You get a report with photos.", "es": "Le acompañamos a la visita e inspeccionamos la vivienda. Recibe un informe con fotos.", "de": "Wir begleiten die Besichtigung und prüfen das Haus bautechnisch. Sie erhalten einen Bericht mit Fotos."}, "Begroten": {"en": "Budget", "es": "Presupuestar", "de": "Kalkulieren"}, "Renovatieadvies met een kostenraming, plus alle aankoopkosten. Eén totaalbedrag.": {"en": "Renovation advice with a cost estimate, plus all purchase costs. One total figure.", "es": "Asesoría de reforma con presupuesto, más todos los gastos de compra. Una cifra total.", "de": "Renovierungsberatung mit Kostenschätzung, plus alle Kaufnebenkosten. Eine Gesamtsumme."}, "Kopen": {"en": "Buy", "es": "Comprar", "de": "Kaufen"}, "We begeleiden het bod en de stappen tot de notaris, samen met uw eigen advocaat.": {"en": "We guide the offer and every step to the notary, together with your own lawyer.", "es": "Le acompañamos en la oferta y hasta la notaría, junto con su propio abogado.", "de": "Wir begleiten das Angebot und alle Schritte bis zum Notar, zusammen mit Ihrem eigenen Anwalt."}, "Renoveren": {"en": "Renovate", "es": "Reformar", "de": "Renovieren"}, "Na de aankoop voeren we de renovatie of verbouwing voor u uit of regelen we die.": {"en": "After the purchase we carry out or arrange the renovation for you.", "es": "Tras la compra realizamos o gestionamos la reforma por usted.", "de": "Nach dem Kauf führen wir die Renovierung für Sie aus oder organisieren sie."}, "Eigen werk · renovatie woonboerderij, Didam": {"en": "Our work · farmhouse renovation, Didam (NL)", "es": "Obra propia · reforma de granja, Didam (NL)", "de": "Eigenes Projekt · Bauernhaus-Renovierung, Didam (NL)"}, "Bouwkundige keuring": {"en": "Building survey", "es": "Inspección técnica", "de": "Bautechnisches Gutachten"}, "Wat u bij de bezichtiging <em class=\"g\">niet<\/em> ziet.": {"en": "What you <em class=\"g\">don't<\/em> see at a viewing.", "es": "Lo que <em class=\"g\">no<\/em> ve en una visita.", "de": "Was Sie bei der Besichtigung <em class=\"g\">nicht<\/em> sehen."}, "Een verse laag witkalk verbergt veel. Wij kijken waar het geld zit: in de constructie, het dak, het water en de papieren.": {"en": "A fresh coat of whitewash hides a lot. We look where the money is: the structure, the roof, the water and the paperwork.", "es": "Una capa de cal nueva oculta mucho. Miramos donde está el dinero: la estructura, el tejado, el agua y los papeles.", "de": "Ein frischer Kalkanstrich verdeckt viel. Wir schauen, wo das Geld steckt: Statik, Dach, Wasser und Papiere."}, "Vocht en salpeter": {"en": "Damp and saltpetre", "es": "Humedad y salitre", "de": "Feuchtigkeit und Salpeter"}, "Scheuren en verzakking": {"en": "Cracks and subsidence", "es": "Grietas y asentamientos", "de": "Risse und Setzungen"}, "Dak en dakterras": {"en": "Roof and roof terrace", "es": "Cubierta y azotea", "de": "Dach und Dachterrasse"}, "Asbest-golfplaten": {"en": "Asbestos roof sheets", "es": "Placas de fibrocemento", "de": "Asbest-Wellplatten"}, "Elektra en keuringsbewijs": {"en": "Electrics and certificate", "es": "Electricidad y boletín", "de": "Elektrik und Prüfbescheinigung"}, "Riolering en beerput": {"en": "Drainage and septic tank", "es": "Saneamiento y fosa séptica", "de": "Abwasser und Sickergrube"}, "Aanbouw die niet geregistreerd is": {"en": "Unregistered extensions", "es": "Ampliaciones no registradas", "de": "Nicht eingetragene Anbauten"}, "Bewoonbaarheid": {"en": "Habitability", "es": "Habitabilidad", "de": "Bewohnbarkeit"}, "Eigen werk · aanbouw met balkon, Elst": {"en": "Our work · extension with balcony, Elst (NL)", "es": "Obra propia · ampliación con balcón, Elst (NL)", "de": "Eigenes Projekt · Anbau mit Balkon, Elst (NL)"}, "Renovatie en verbouwing": {"en": "Renovation and remodelling", "es": "Reformas y ampliaciones", "de": "Renovierung und Umbau"}, "Wie de begroting maakt, <em class=\"g\">bouwt hem ook.<\/em>": {"en": "Whoever writes the budget <em class=\"g\">builds it too.<\/em>", "es": "Quien hace el presupuesto, <em class=\"g\">también lo construye.<\/em>", "de": "Wer kalkuliert, <em class=\"g\">baut auch.<\/em>"}, "Omdat wij de woning al vóór de aankoop hebben gekeurd, weten we precies wat er moet gebeuren. U krijgt één aanspreekpunt, vaste afspraken over planning en budget, en wekelijks foto's van de voortgang als u in Nederland of België bent.": {"en": "Because we inspected the home before you bought it, we know exactly what needs doing. One point of contact, firm agreements on schedule and budget, and weekly progress photos while you are abroad.", "es": "Como inspeccionamos la vivienda antes de la compra, sabemos exactamente qué hay que hacer. Un único interlocutor, acuerdos firmes sobre plazos y presupuesto, y fotos semanales del avance si está fuera.", "de": "Weil wir das Haus schon vor dem Kauf geprüft haben, wissen wir genau, was zu tun ist. Ein Ansprechpartner, feste Absprachen zu Zeitplan und Budget und wöchentliche Fotos, solange Sie im Ausland sind."}, "Vraag een renovatieadvies aan <span class=\"arr\">→<\/span>": {"en": "Request renovation advice <span class=\"arr\">→<\/span>", "es": "Solicite asesoría de reforma <span class=\"arr\">→<\/span>", "de": "Renovierungsberatung anfragen <span class=\"arr\">→<\/span>"}, "Wat kost uw woning <em class=\"g\">echt?<\/em>": {"en": "What does your home <em class=\"g\">really<\/em> cost?", "es": "¿Cuánto cuesta <em class=\"g\">de verdad<\/em> su vivienda?", "de": "Was kostet Ihr Haus <em class=\"g\">wirklich?<\/em>"}, "De vraagprijs is maar een deel. Bereken hier een eerste indicatie van het totaal, met belastingen, notaris en renovatie.": {"en": "The asking price is only part of it. Get a first estimate of the total here, with taxes, notary and renovation.", "es": "El precio de venta es solo una parte. Calcule aquí una primera estimación del total, con impuestos, notaría y reforma.", "de": "Der Kaufpreis ist nur ein Teil. Berechnen Sie hier eine erste Schätzung der Gesamtkosten, mit Steuern, Notar und Renovierung."}, "Koopprijs": {"en": "Purchase price", "es": "Precio de compra", "de": "Kaufpreis"}, "Regio (overdrachtsbelasting ITP)": {"en": "Region (transfer tax ITP)", "es": "Región (ITP)", "de": "Region (Grunderwerbsteuer ITP)"}, "Andalusië: Costa del Sol, Costa Tropical (7%)": {"en": "Andalusia: Costa del Sol, Costa Tropical (7%)", "es": "Andalucía: Costa del Sol, Costa Tropical (7%)", "de": "Andalusien: Costa del Sol, Costa Tropical (7%)"}, "Valencia: Costa Blanca, Costa del Azahar (10%)": {"en": "Valencia: Costa Blanca, Costa del Azahar (10%)", "es": "Comunidad Valenciana: Costa Blanca, Costa del Azahar (10%)", "de": "Valencia: Costa Blanca, Costa del Azahar (10%)"}, "Catalonië: Costa Brava, Costa Dorada (10%)": {"en": "Catalonia: Costa Brava, Costa Dorada (10%)", "es": "Cataluña: Costa Brava, Costa Dorada (10%)", "de": "Katalonien: Costa Brava, Costa Dorada (10%)"}, "Balearen (vanaf 8%)": {"en": "Balearic Islands (from 8%)", "es": "Islas Baleares (desde 8%)", "de": "Balearen (ab 8%)"}, "Canarische Eilanden (6,5%)": {"en": "Canary Islands (6.5%)", "es": "Islas Canarias (6,5%)", "de": "Kanarische Inseln (6,5%)"}, "Woonoppervlak": {"en": "Living area", "es": "Superficie", "de": "Wohnfläche"}, "Renovatie": {"en": "Renovation", "es": "Reforma", "de": "Renovierung"}, "Geen": {"en": "None", "es": "Ninguna", "de": "Keine"}, "Opfrissen": {"en": "Refresh", "es": "Lavado de cara", "de": "Auffrischen"}, "Gedeeltelijk": {"en": "Partial", "es": "Parcial", "de": "Teilweise"}, "Volledig": {"en": "Full", "es": "Integral", "de": "Komplett"}, "Eigen onafhankelijke advocaat (aanbevolen)": {"en": "Own independent lawyer (recommended)", "es": "Abogado independiente propio (recomendado)", "de": "Eigener unabhängiger Anwalt (empfohlen)"}, "Complete begeleiding door Quint": {"en": "Full guidance by Quint", "es": "Asesoría completa de Quint", "de": "Komplette Begleitung durch Quint"}, "Totale investering, indicatie": {"en": "Total investment, estimate", "es": "Inversión total, estimación", "de": "Gesamtinvestition, Schätzung"}, "Indicatie op basis van gangbare tarieven voor bestaande woningen. Tarieven verschillen per regio en situatie. Bij nieuwbouw geldt btw (IVA) in plaats van ITP. Voor uw woning rekenen we alles exact uit.": {"en": "Estimate based on typical rates for resale homes. Rates vary by region and situation. New builds pay VAT (IVA) instead of ITP. For your home we calculate everything exactly.", "es": "Estimación basada en tarifas habituales para vivienda de segunda mano. Las tarifas varían según la región y la situación. En obra nueva se paga IVA en lugar de ITP. Para su vivienda lo calculamos todo con exactitud.", "de": "Schätzung auf Basis üblicher Sätze für Bestandsimmobilien. Die Sätze unterscheiden sich je nach Region und Situation. Bei Neubauten fällt Mehrwertsteuer (IVA) statt ITP an. Für Ihr Haus rechnen wir alles genau aus."}, "Al iets gezien?": {"en": "Seen something already?", "es": "¿Ya ha visto algo?", "de": "Schon etwas gesehen?"}, "Gevonden op idealista? <em class=\"g\">Wij gaan kijken.<\/em>": {"en": "Found it on idealista? <em class=\"g\">We'll go and look.<\/em>", "es": "¿Lo ha encontrado en idealista? <em class=\"g\">Vamos a verlo.<\/em>", "de": "Auf idealista gefunden? <em class=\"g\">Wir schauen es uns an.<\/em>"}, "Plak de link van de advertentie. We bekijken de woning, vragen de papieren op en vertellen u eerlijk wat we zien, voordat u een bod doet.": {"en": "Paste the link to the listing. We view the property, request the documents and tell you honestly what we see, before you make an offer.", "es": "Pegue el enlace del anuncio. Visitamos la vivienda, pedimos la documentación y le decimos con sinceridad lo que vemos, antes de que haga una oferta.", "de": "Fügen Sie den Link zur Anzeige ein. Wir besichtigen das Haus, fordern die Unterlagen an und sagen Ihnen ehrlich, was wir sehen, bevor Sie ein Angebot machen."}, "Link naar de advertentie": {"en": "Link to the listing", "es": "Enlace al anuncio", "de": "Link zur Anzeige"}, "Laat deze woning checken <span class=\"arr\">→<\/span>": {"en": "Have this home checked <span class=\"arr\">→<\/span>", "es": "Revisar esta vivienda <span class=\"arr\">→<\/span>", "de": "Dieses Haus prüfen lassen <span class=\"arr\">→<\/span>"}, "Dit is de voorbeeldversie van de site. Op de echte site komt de link direct bij ons binnen.": {"en": "This is the preview version of the site. On the live site the link comes straight to us.", "es": "Esta es la versión de muestra de la web. En la web real el enlace nos llega directamente.", "de": "Dies ist die Vorschauversion der Website. Auf der echten Website kommt der Link direkt bei uns an."}, "Actueel aanbod bekijken": {"en": "Browse current listings", "es": "Ver la oferta actual", "de": "Aktuelles Angebot ansehen"}, "Opent idealista.com in een nieuw venster.": {"en": "Opens idealista.com in a new window.", "es": "Abre idealista.com en una ventana nueva.", "de": "Öffnet idealista.com in einem neuen Fenster."}, "Vooraf duidelijk. <em class=\"g\">Geen provisie.<\/em>": {"en": "Clear up front. <em class=\"g\">No commission.<\/em>", "es": "Claro desde el principio. <em class=\"g\">Sin comisión.<\/em>", "de": "Vorab klar. <em class=\"g\">Keine Provision.<\/em>"}, "U betaalt ons, niet de verkoper. Daarom kunnen we u ook afraden om te kopen.": {"en": "You pay us, not the seller. That's why we can also advise you not to buy.", "es": "Usted nos paga a nosotros, no el vendedor. Por eso también podemos desaconsejarle la compra.", "de": "Sie bezahlen uns, nicht der Verkäufer. Deshalb können wir Ihnen auch vom Kauf abraten."}, "Losse keuring": {"en": "Single inspection", "es": "Inspección suelta", "de": "Einzelgutachten"}, "€ 595<small>per woning<\/small>": {"en": "€ 595<small>per property<\/small>", "es": "595 €<small>por vivienda<\/small>", "de": "595 €<small>pro Objekt<\/small>"}, "Keuring ter plaatse, ook als u zelf niet in Spanje bent": {"en": "On-site inspection, even if you are not in Spain yourself", "es": "Inspección in situ, aunque usted no esté en España", "de": "Prüfung vor Ort, auch wenn Sie selbst nicht in Spanien sind"}, "Rapport met foto's en gebreken op volgorde van urgentie": {"en": "Report with photos and defects ranked by urgency", "es": "Informe con fotos y defectos ordenados por urgencia", "de": "Bericht mit Fotos und Mängeln nach Dringlichkeit"}, "Ruwe kostenraming per gebrek": {"en": "Rough cost estimate per defect", "es": "Estimación aproximada por defecto", "de": "Grobe Kostenschätzung pro Mangel"}, "Telefonische toelichting": {"en": "Explanation by phone", "es": "Explicación por teléfono", "de": "Telefonische Erläuterung"}, "Keuring aanvragen": {"en": "Request an inspection", "es": "Solicitar inspección", "de": "Gutachten anfragen"}, "Meest gekozen": {"en": "Most chosen", "es": "Más elegido", "de": "Am beliebtesten"}, "Complete begeleiding": {"en": "Full guidance", "es": "Asesoría completa", "de": "Komplette Begleitung"}, "Zoeken tot sleutel": {"en": "Search to keys", "es": "De la búsqueda a las llaves", "de": "Von der Suche bis zum Schlüssel"}, "1,5%<small>van de koopprijs, min. € 3.950<\/small>": {"en": "1.5%<small>of the purchase price, min. € 3,950<\/small>", "es": "1,5%<small>del precio de compra, mín. 3.950 €<\/small>", "de": "1,5%<small>vom Kaufpreis, mind. 3.950 €<\/small>"}, "Zoekprofiel en selectie van woningen": {"en": "Search profile and shortlist", "es": "Perfil de búsqueda y selección de viviendas", "de": "Suchprofil und Vorauswahl"}, "Mee naar alle bezichtigingen": {"en": "With you at every viewing", "es": "Le acompañamos a todas las visitas", "de": "Bei allen Besichtigungen dabei"}, "Keuring van maximaal 3 woningen inbegrepen": {"en": "Inspection of up to 3 homes included", "es": "Inspección de hasta 3 viviendas incluida", "de": "Gutachten für bis zu 3 Häuser inklusive"}, "Renovatieadvies met totale begroting": {"en": "Renovation advice with total budget", "es": "Asesoría de reforma con presupuesto total", "de": "Renovierungsberatung mit Gesamtbudget"}, "Advies bij het bod en begeleiding tot de notaris": {"en": "Advice on the offer and guidance to the notary", "es": "Asesoría en la oferta y acompañamiento hasta la notaría", "de": "Beratung beim Angebot und Begleitung bis zum Notar"}, "Na de aankoop": {"en": "After the purchase", "es": "Tras la compra", "de": "Nach dem Kauf"}, "Renovatie &amp; verbouwing": {"en": "Renovation &amp; remodelling", "es": "Reformas y ampliaciones", "de": "Renovierung &amp; Umbau"}, "Op maat<small>vaste offerte<\/small>": {"en": "Tailored<small>fixed quote<\/small>", "es": "A medida<small>presupuesto cerrado<\/small>", "de": "Nach Maß<small>Festpreisangebot<\/small>"}, "Ontwerp en materiaalkeuze": {"en": "Design and choice of materials", "es": "Diseño y elección de materiales", "de": "Entwurf und Materialwahl"}, "Vergunningen en aannemers": {"en": "Permits and contractors", "es": "Licencias y contratistas", "de": "Genehmigungen und Handwerker"}, "Toezicht op de bouw en wekelijkse updates": {"en": "Site supervision and weekly updates", "es": "Dirección de obra y novedades semanales", "de": "Bauaufsicht und wöchentliche Updates"}, "Oplevering met eindcontrole": {"en": "Handover with final check", "es": "Entrega con revisión final", "de": "Übergabe mit Endkontrolle"}, "Offerte aanvragen": {"en": "Request a quote", "es": "Pedir presupuesto", "de": "Angebot anfragen"}, "Tarieven inclusief 21% IVA. Reiskosten binnen het werkgebied inbegrepen. Bij complete begeleiding verrekenen we eerdere keuringen.": {"en": "Fees include 21% VAT (IVA). Travel within our area included. With full guidance, earlier inspections are credited.", "es": "Tarifas con 21% de IVA incluido. Desplazamientos dentro de la zona incluidos. Con asesoría completa descontamos las inspecciones anteriores.", "de": "Preise inklusive 21% MwSt. (IVA). Fahrtkosten im Einsatzgebiet inklusive. Bei kompletter Begleitung verrechnen wir frühere Gutachten."}, "“Ik heb te vaak gezien hoe kopers pas na de sleutel ontdekten wat ze hadden gekocht.”": {"en": "“Too often I've seen buyers discover what they had bought only after getting the keys.”", "es": "“He visto demasiadas veces cómo los compradores descubrían lo que habían comprado después de recibir las llaves.”", "de": "„Zu oft habe ich gesehen, wie Käufer erst nach der Schlüsselübergabe merkten, was sie gekauft hatten.“"}, "Over Quint": {"en": "About Quint", "es": "Sobre Quint", "de": "Über Quint"}, "Achter Quint staat <span class=\"ph\">naam<\/span>. Ruim 25 jaar bouwde en renoveerde hij woningen in Nederland met zijn eigen bouwbedrijf, RKOB Bouwbedrijf: van woonboerderijen en jaren-30-woningen tot complete nieuwbouw. Nu woont en werkt hij in <span class=\"ph\">regio<\/span>.": {"en": "Behind Quint is <span class=\"ph\">name<\/span>. For more than 25 years he built and renovated homes in the Netherlands with his own construction company, RKOB Bouwbedrijf: from farmhouses and 1930s homes to complete new builds. Today he lives and works in <span class=\"ph\">region<\/span>.", "es": "Detrás de Quint está <span class=\"ph\">nombre<\/span>. Durante más de 25 años construyó y reformó viviendas en los Países Bajos con su propia constructora, RKOB Bouwbedrijf: desde granjas y casas de los años 30 hasta obra nueva completa. Hoy vive y trabaja en <span class=\"ph\">región<\/span>.", "de": "Hinter Quint steht <span class=\"ph\">Name<\/span>. Über 25 Jahre hat er mit seiner eigenen Baufirma, RKOB Bouwbedrijf, in den Niederlanden Häuser gebaut und renoviert: von Bauernhäusern und 30er-Jahre-Häusern bis zu kompletten Neubauten. Heute lebt und arbeitet er in <span class=\"ph\">Region<\/span>."}, "Quint is ontstaan uit een eenvoudig idee: wie in Spanje een huis koopt, verdient iemand die aan zijn kant staat. Iemand die weet hoe een dak hoort te liggen, wat een scheur betekent en wat een renovatie hier kost.": {"en": "Quint grew from a simple idea: anyone buying a home in Spain deserves someone on their side. Someone who knows how a roof should be laid, what a crack means and what a renovation costs here.", "es": "Quint nació de una idea sencilla: quien compra una casa en España merece a alguien de su lado. Alguien que sabe cómo debe estar un tejado, qué significa una grieta y cuánto cuesta aquí una reforma.", "de": "Quint entstand aus einer einfachen Idee: Wer in Spanien ein Haus kauft, verdient jemanden an seiner Seite. Jemanden, der weiß, wie ein Dach liegen muss, was ein Riss bedeutet und was eine Renovierung hier kostet."}, "Wij weten hoe een huis in elkaar zit en hebben geen belang bij de verkoop.": {"en": "We know how a house is put together and have no stake in the sale.", "es": "Sabemos cómo está hecha una casa y no tenemos ningún interés en la venta.", "de": "Wir wissen, wie ein Haus gebaut ist, und haben kein Interesse am Verkauf."}, "25 jaar bouwen en renoveren. <em class=\"g\">Nu in Spanje.<\/em>": {"en": "25 years of building and renovating. <em class=\"g\">Now in Spain.<\/em>", "es": "25 años construyendo y reformando. <em class=\"g\">Ahora en España.<\/em>", "de": "25 Jahre Bauen und Renovieren. <em class=\"g\">Jetzt in Spanien.<\/em>"}, "Wie zelf honderden keren een dak, een fundering en een badkamer heeft vernieuwd, ziet bij een bezichtiging direct wat er mis is. Een selectie uit ons werk in Nederland.": {"en": "Anyone who has renewed hundreds of roofs, foundations and bathrooms sees straight away what is wrong at a viewing. A selection of our work in the Netherlands.", "es": "Quien ha renovado cientos de tejados, cimientos y baños ve enseguida lo que falla en una visita. Una selección de nuestro trabajo en los Países Bajos.", "de": "Wer selbst Hunderte Dächer, Fundamente und Bäder erneuert hat, sieht bei einer Besichtigung sofort, was nicht stimmt. Eine Auswahl unserer Arbeit in den Niederlanden."}, "Nieuwbouw · Angerlo": {"en": "New build · Angerlo (NL)", "es": "Obra nueva · Angerlo (NL)", "de": "Neubau · Angerlo (NL)"}, "Renovatie woonboerderij · Friesland": {"en": "Farmhouse renovation · Friesland (NL)", "es": "Reforma de granja · Frisia (NL)", "de": "Bauernhaus-Renovierung · Friesland (NL)"}, "Woning · eigen werk": {"en": "Home · our work", "es": "Vivienda · obra propia", "de": "Haus · eigenes Projekt"}, "Renovatie jaren-30-woning": {"en": "1930s home renovation", "es": "Reforma de casa de los años 30", "de": "Renovierung 30er-Jahre-Haus"}, "Bekijk alle projecten op rkobbouwbedrijf.nl →": {"en": "See all projects on rkobbouwbedrijf.nl →", "es": "Ver todos los proyectos en rkobbouwbedrijf.nl →", "de": "Alle Projekte auf rkobbouwbedrijf.nl →"}, "Veelgestelde vragen": {"en": "Frequently asked questions", "es": "Preguntas frecuentes", "de": "Häufige Fragen"}, "Goed om te weten.": {"en": "Good to know.", "es": "Conviene saber.", "de": "Gut zu wissen."}, "Wat als ik de woning na de keuring niet koop?": {"en": "What if I don't buy the home after the inspection?", "es": "¿Y si no compro la vivienda después de la inspección?", "de": "Was, wenn ich das Haus nach dem Gutachten nicht kaufe?"}, "Dan heeft de keuring zijn werk gedaan. U betaalt alleen de keuring. Bij complete begeleiding zoeken we gewoon verder, de keuring van maximaal drie woningen is inbegrepen.": {"en": "Then the inspection did its job. You only pay for the inspection. With full guidance we simply keep searching; inspection of up to three homes is included.", "es": "Entonces la inspección ha cumplido su función. Solo paga la inspección. Con asesoría completa seguimos buscando; la inspección de hasta tres viviendas está incluida.", "de": "Dann hat das Gutachten seinen Zweck erfüllt. Sie zahlen nur das Gutachten. Bei kompletter Begleitung suchen wir einfach weiter; Gutachten für bis zu drei Häuser sind inklusive."}, "Werken jullie samen met makelaars?": {"en": "Do you work with estate agents?", "es": "¿Trabajan con inmobiliarias?", "de": "Arbeiten Sie mit Maklern zusammen?"}, "Ja, want de meeste woningen staan bij een makelaar te koop. We bezichtigen via hen, maar we ontvangen geen provisie en hebben geen afspraken met verkopers. Ons enige belang is uw belang.": {"en": "Yes, because most homes are for sale through an agent. We view through them, but we receive no commission and have no arrangements with sellers. Your interest is our only interest.", "es": "Sí, porque la mayoría de las viviendas se venden a través de una inmobiliaria. Visitamos a través de ellas, pero no cobramos comisión ni tenemos acuerdos con vendedores. Nuestro único interés es el suyo.", "de": "Ja, denn die meisten Häuser werden über Makler verkauft. Wir besichtigen über sie, erhalten aber keine Provision und haben keine Absprachen mit Verkäufern. Unser einziges Interesse ist Ihres."}, "Zijn jullie ook advocaat?": {"en": "Are you also lawyers?", "es": "¿Son también abogados?", "de": "Sind Sie auch Anwälte?"}, "Nee. Voor de juridische controle, zoals de eigendomsakte (nota simple), schulden op de woning en het koopcontract, raden we altijd een eigen onafhankelijke advocaat aan. We werken daar nauw mee samen en kunnen u er een aanbevelen.": {"en": "No. For the legal checks, such as the land registry extract (nota simple), debts on the property and the purchase contract, we always recommend your own independent lawyer. We work closely with them and can recommend one.", "es": "No. Para la revisión jurídica, como la nota simple, las cargas de la vivienda y el contrato de compraventa, recomendamos siempre un abogado independiente propio. Colaboramos estrechamente y podemos recomendarle uno.", "de": "Nein. Für die rechtliche Prüfung, etwa den Grundbuchauszug (nota simple), Belastungen der Immobilie und den Kaufvertrag, empfehlen wir immer einen eigenen unabhängigen Anwalt. Wir arbeiten eng zusammen und können Ihnen einen empfehlen."}, "Ik woon nog in Nederland of België. Kan het op afstand?": {"en": "I don't live in Spain yet. Can this be done remotely?", "es": "Todavía no vivo en España. ¿Se puede hacer a distancia?", "de": "Ich wohne noch nicht in Spanien. Geht das aus der Ferne?"}, "Ja. We bezichtigen en keuren ter plaatse, sturen foto's en video en bespreken alles met u via videobellen. U komt pas naar Spanje als er een woning is die het waard is.": {"en": "Yes. We view and inspect on site, send photos and video and discuss everything with you by video call. You only travel to Spain once there is a home worth it.", "es": "Sí. Visitamos e inspeccionamos in situ, enviamos fotos y vídeo y lo comentamos todo por videollamada. Solo viaja a España cuando hay una vivienda que merece la pena.", "de": "Ja. Wir besichtigen und prüfen vor Ort, schicken Fotos und Videos und besprechen alles per Videoanruf. Sie reisen erst nach Spanien, wenn ein Haus es wert ist."}, "In welke regio's zijn jullie actief?": {"en": "Which regions do you cover?", "es": "¿En qué zonas trabajan?", "de": "In welchen Regionen sind Sie tätig?"}, "We werken vanuit <span class=\"ph\">regio<\/span>. Voor andere regio's overleggen we graag wat mogelijk is.": {"en": "We work from <span class=\"ph\">region<\/span>. For other regions we are happy to discuss what is possible.", "es": "Trabajamos desde <span class=\"ph\">región<\/span>. Para otras zonas, consúltenos.", "de": "Wir arbeiten von <span class=\"ph\">Region<\/span> aus. Für andere Regionen besprechen wir gern, was möglich ist."}, "Contact": {"en": "Contact", "es": "Contacto", "de": "Kontakt"}, "Vertel ons wat u zoekt.": {"en": "Tell us what you're looking for.", "es": "Cuéntenos qué busca.", "de": "Sagen Sie uns, was Sie suchen."}, "Een kennismaking is vrijblijvend en kost niets. Binnen één werkdag hoort u van ons.": {"en": "An introduction is free and without obligation. You will hear from us within one working day.", "es": "La primera reunión es gratuita y sin compromiso. Le respondemos en un día laborable.", "de": "Ein Kennenlernen ist kostenlos und unverbindlich. Sie hören innerhalb eines Werktags von uns."}, "Telefoon en WhatsApp": {"en": "Phone and WhatsApp", "es": "Teléfono y WhatsApp", "de": "Telefon und WhatsApp"}, "E-mail": {"en": "Email", "es": "Correo electrónico", "de": "E-Mail"}, "info@domeinnaam": {"en": "info@domain", "es": "info@dominio", "de": "info@domain"}, "Werkgebied": {"en": "Area", "es": "Zona", "de": "Einsatzgebiet"}, "<span class=\"ph\">regio<\/span>, Spanje": {"en": "<span class=\"ph\">region<\/span>, Spain", "es": "<span class=\"ph\">región<\/span>, España", "de": "<span class=\"ph\">Region<\/span>, Spanien"}, "Naam": {"en": "Name", "es": "Nombre", "de": "Name"}, "Telefoon": {"en": "Phone", "es": "Teléfono", "de": "Telefon"}, "Budget": {"en": "Budget", "es": "Presupuesto", "de": "Budget"}, "Tot € 200.000": {"en": "Up to € 200,000", "es": "Hasta 200.000 €", "de": "Bis 200.000 €"}, "€ 200.000 – 400.000": {"en": "€ 200,000 – 400,000", "es": "200.000 – 400.000 €", "de": "200.000 – 400.000 €"}, "€ 400.000 – 750.000": {"en": "€ 400,000 – 750,000", "es": "400.000 – 750.000 €", "de": "400.000 – 750.000 €"}, "Boven € 750.000": {"en": "Over € 750,000", "es": "Más de 750.000 €", "de": "Über 750.000 €"}, "Waarmee kunnen we helpen?": {"en": "How can we help?", "es": "¿Cómo podemos ayudarle?", "de": "Wie können wir helfen?"}, "Alleen een keuring": {"en": "Inspection only", "es": "Solo una inspección", "de": "Nur ein Gutachten"}, "Renovatie of verbouwing": {"en": "Renovation or remodelling", "es": "Reforma o ampliación", "de": "Renovierung oder Umbau"}, "Weet ik nog niet": {"en": "Not sure yet", "es": "Aún no lo sé", "de": "Weiß ich noch nicht"}, "Bericht": {"en": "Message", "es": "Mensaje", "de": "Nachricht"}, "Verstuur aanvraag <span class=\"arr\">→<\/span>": {"en": "Send request <span class=\"arr\">→<\/span>", "es": "Enviar solicitud <span class=\"arr\">→<\/span>", "de": "Anfrage senden <span class=\"arr\">→<\/span>"}, "Dit is de voorbeeldversie van de site. Op de echte site komt uw aanvraag direct binnen per e-mail en WhatsApp.": {"en": "This is the preview version of the site. On the live site your request arrives straight away by email and WhatsApp.", "es": "Esta es la versión de muestra de la web. En la web real su solicitud nos llega al momento por correo y WhatsApp.", "de": "Dies ist die Vorschauversion der Website. Auf der echten Website kommt Ihre Anfrage sofort per E-Mail und WhatsApp an."}, "NIF <span class=\"ph\">nummer<\/span>": {"en": "NIF <span class=\"ph\">number<\/span>", "es": "NIF <span class=\"ph\">número<\/span>", "de": "NIF <span class=\"ph\">Nummer<\/span>"}, "Aviso legal": {"en": "Legal notice", "es": "Aviso legal", "de": "Impressum"}, "Privacidad": {"en": "Privacy", "es": "Privacidad", "de": "Datenschutz"}, "@Quint Home Finder & Renovation, naar boven": {"en": "Quint Home Finder & Renovation, back to top", "es": "Quint Home Finder & Renovation, volver arriba", "de": "Quint Home Finder & Renovation, nach oben"}, "@Hoofdmenu": {"en": "Main menu", "es": "Menú principal", "de": "Hauptmenü"}, "@Introductie": {"en": "Introduction", "es": "Introducción", "de": "Einleitung"}, "@Witte mediterrane villa met olijfbomen en zwembad bij avondzon": {"en": "White Mediterranean villa with olive trees and pool at sunset", "es": "Villa mediterránea blanca con olivos y piscina al atardecer", "de": "Weiße Mittelmeervilla mit Olivenbäumen und Pool bei Sonnenuntergang"}, "@Renovatie van een woonboerderij: oude balken en metselwerk blootgelegd": {"en": "Farmhouse renovation: old beams and brickwork exposed", "es": "Reforma de granja: vigas antiguas y ladrillo al descubierto", "de": "Bauernhaus-Renovierung: alte Balken und Mauerwerk freigelegt"}, "@Aanbouw met grote glazen pui en balkon": {"en": "Extension with large glass front and balcony", "es": "Ampliación con gran cristalera y balcón", "de": "Anbau mit großer Glasfront und Balkon"}, "@Kostencalculator": {"en": "Cost calculator", "es": "Calculadora de costes", "de": "Kostenrechner"}, "@Nieuwbouwwoning met verlichte gevel in de avond": {"en": "New-build home with lit facade at night", "es": "Vivienda de obra nueva con fachada iluminada de noche", "de": "Neubauhaus mit beleuchteter Fassade am Abend"}, "@Gerenoveerde woonboerderij met tuin": {"en": "Renovated farmhouse with garden", "es": "Granja reformada con jardín", "de": "Renoviertes Bauernhaus mit Garten"}, "@Vrijstaande woning met erker en terras": {"en": "Detached house with bay window and terrace", "es": "Casa unifamiliar con mirador y terraza", "de": "Freistehendes Haus mit Erker und Terrasse"}, "@Jaren-30-woning in de steigers tijdens renovatie": {"en": "1930s house in scaffolding during renovation", "es": "Casa de los años 30 con andamios durante la reforma", "de": "30er-Jahre-Haus im Gerüst während der Renovierung"}, "@Nieuwbouwvilla met hekwerk en bomen": {"en": "New-build villa with fence and trees", "es": "Villa de obra nueva con verja y árboles", "de": "Neubauvilla mit Zaun und Bäumen"}, "@Regio, type woning, wanneer u wilt kopen…": {"en": "Area, type of home, when you want to buy…", "es": "Zona, tipo de vivienda, cuándo quiere comprar…", "de": "Region, Art des Hauses, wann Sie kaufen möchten…"}, "@Naar boven": {"en": "Back to top", "es": "Volver arriba", "de": "Nach oben"}};
+  const LOC={nl:'nl-NL',en:'en-GB',es:'es-ES',de:'de-DE'};
+  const L={
+    nl:{itp:'Overdrachtsbelasting',not:'Notaris, register en gestoría (± 1,2%)',law:'Advocaat (± 1%)',q:'Begeleiding Quint (1,5%, min. € 3.950)',reno:'Renovatie',buf:'Onvoorzien (10% van renovatie)',price:'Koopprijs',of:(e,p)=>`waarvan ${e} bovenop de koopprijs (${p}%)`},
+    en:{itp:'Transfer tax',not:'Notary, registry and gestoría (± 1.2%)',law:'Lawyer (± 1%)',q:'Quint guidance (1.5%, min. € 3,950)',reno:'Renovation',buf:'Contingency (10% of renovation)',price:'Purchase price',of:(e,p)=>`of which ${e} on top of the purchase price (${p}%)`},
+    es:{itp:'Impuesto de transmisiones',not:'Notaría, registro y gestoría (± 1,2%)',law:'Abogado (± 1%)',q:'Asesoría Quint (1,5%, mín. 3.950 €)',reno:'Reforma',buf:'Imprevistos (10% de la reforma)',price:'Precio de compra',of:(e,p)=>`de los cuales ${e} sobre el precio de compra (${p}%)`},
+    de:{itp:'Grunderwerbsteuer',not:'Notar, Grundbuch und Gestoría (± 1,2%)',law:'Anwalt (± 1%)',q:'Begleitung Quint (1,5%, mind. 3.950 €)',reno:'Renovierung',buf:'Unvorhergesehenes (10% der Renovierung)',price:'Kaufpreis',of:(e,p)=>`davon ${e} zusätzlich zum Kaufpreis (${p}%)`}
+  };
+  let lang='nl';
+  const eur=n=>{const v=Math.round(n).toLocaleString(LOC[lang]);return lang==='nl'||lang==='en'?'€ '+v:v+' €'};
+  const pct=n=>(n*100).toLocaleString(LOC[lang]);
+
+  /* collect translatable nodes once, remembering the Dutch original */
+  const norm=h=>h.trim().replace(/\s+/g,' ');
+  const nodes=[];const attrs=[];
+  (function walk(el){for(const c of el.children){const t=c.tagName.toLowerCase();
+    if(['script','style','svg','use','input','textarea'].includes(t))continue;
+    if(t==='select'){for(const o of c.options)nodes.push([o,norm(o.innerHTML)]);continue}
+    if(c.classList.contains('notr')||c.classList.contains('notr-c')||c.id==='o-rows'||c.id==='o-bar')continue;
+    if([...c.childNodes].some(n=>n.nodeType===3&&n.textContent.trim()))nodes.push([c,norm(c.innerHTML)]);else walk(c);}})(document.body);
+  document.querySelectorAll('[alt],[placeholder],[aria-label]').forEach(e=>{for(const a of ['alt','placeholder','aria-label'])if(e.hasAttribute(a))attrs.push([e,a,e.getAttribute(a)])});
+
+  function setLang(l){
+    lang=TR&&LOC[l]?l:'nl';
+    document.documentElement.lang=lang;
+    for(const [el,nl] of nodes){const t=TR[nl];el.innerHTML=lang==='nl'||!t?nl:t[lang];}
+    for(const [el,a,nl] of attrs){const t=TR['@'+nl];el.setAttribute(a,lang==='nl'||!t?nl:t[lang]);}
+    document.querySelectorAll('.lang button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.l===lang)));
+    try{localStorage.setItem('quint-lang',lang)}catch(e){}
+    calc();
+  }
+
+  const C={itp:'#D9BD7E',not:'#8FA6C4',law:'#6E86A8',quint:'#E9E4D8',reno:'#B8903F',buf:'#7C6A45'};
+  function calc(){
+    const S=L[lang];
+    const P=+$('c-price').value, r=+$('c-region').value, m2=+$('c-m2').value;
+    const lvl=+document.querySelector('input[name=reno]:checked').value;
+    $('c-price-out').textContent=eur(P); $('c-m2-out').textContent=m2+' m²';
+    const items=[
+      [S.itp+' (ITP '+pct(r)+'%)',P*r,C.itp],
+      [S.not,P*0.012,C.not],
+      $('c-law').checked?[S.law,P*0.01,C.law]:null,
+      $('c-quint').checked?[S.q,Math.max(P*0.015,3950),C.quint]:null,
+      lvl?[S.reno+' ('+m2+' m² × '+eur(lvl)+')',m2*lvl,C.reno]:null,
+      lvl?[S.buf,m2*lvl*0.1,C.buf]:null
+    ].filter(Boolean);
+    const extra=items.reduce((s,i)=>s+i[1],0);
+    $('o-total').textContent=eur(P+extra);
+    $('o-extra').textContent=S.of(eur(extra),Math.round(extra/P*100));
+    $('o-bar').innerHTML=items.map(i=>`<i style="width:${(i[1]/extra*100).toFixed(2)}%;background:${i[2]}" title="${i[0]}"></i>`).join('');
+    $('o-rows').innerHTML=`<div><span>${S.price}</span><span>${eur(P)}</span></div>`+items.map(i=>`<div><span><i style="background:${i[2]}"></i>${i[0]}</span><span>${eur(i[1])}</span></div>`).join('');
+  }
+  $('calc').addEventListener('input',calc); $('calc').addEventListener('change',calc);
+  $('lead').addEventListener('submit',e=>{e.preventDefault();$('sent').hidden=false;});
+  $('seen').addEventListener('submit',e=>{e.preventDefault();$('seen-sent').hidden=false;});
+  document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.l)));
+
+  let start='nl';
+  try{const s=localStorage.getItem('quint-lang');if(s&&LOC[s])start=s;else{const n=(navigator.language||'nl').slice(0,2);if(LOC[n])start=n;}}catch(e){}
+  setLang(start);
+})();
+</script>
+
+</body>
+</html>
